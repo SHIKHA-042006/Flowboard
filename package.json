@@ -1,0 +1,15 @@
+{
+  "name": "flowboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-time kanban collaboration app (MERN + Socket.io)",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

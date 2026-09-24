@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-surface text-ink font-sans antialiased transition-colors duration-200 dark:bg-dsurface dark:text-dink;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white rounded dark:ring-offset-dsurface;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .scrollbar-thin::-webkit-scrollbar { height: 10px; width: 10px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(22, 32, 44, .22);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+  .fade-in { animation: fb-fade-in .18s ease-out; }
+  .pop-in { animation: fb-pop-in .16s cubic-bezier(.2,.9,.3,1.2); }
+}
+
+@keyframes fb-fade-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fb-pop-in {
+  from { opacity: 0; transform: scale(.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Board backgrounds — layered gradients rather than stock imagery. */
+.bg-board-slate  { background: linear-gradient(150deg, #2B3A4E 0%, #44566E 100%); }
+.bg-board-teal   { background: linear-gradient(150deg, #0B5F53 0%, #2E8C7A 100%); }
+.bg-board-indigo { background: linear-gradient(150deg, #33307A 0%, #5B57B5 100%); }
+.bg-board-amber  { background: linear-gradient(150deg, #8A5A15 0%, #C08A2E 100%); }
+.bg-board-rose   { background: linear-gradient(150deg, #8C2F46 0%, #C05A72 100%); }
+.bg-board-forest { background: linear-gradient(150deg, #24512F 0%, #4B8355 100%); }
