@@ -1,7 +1,7 @@
 # Flowboard
 
-A feature-rich, real-time project-management platform in the Trello mould:
-workspaces → boards → lists → cards, with drag-and-drop, live multi-user sync,
+A feature-rich, real-time project-management platform :
+workspaces → boards → lists → cards, live multi-user sync,
 checklists, priorities, attachments, activity history, notifications, project
 templates, and dark mode.
 
